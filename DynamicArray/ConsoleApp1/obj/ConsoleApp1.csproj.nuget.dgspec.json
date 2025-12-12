@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Nico\\dsa\\DynamicArray\\consoleapp1\\ConsoleApp1.csproj": {}
+    "D:\\Nico\\dsa\\DynamicArray\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "D:\\Nico\\dsa\\DynamicArray\\consoleapp1\\ConsoleApp1.csproj": {
+    "D:\\Nico\\dsa\\DynamicArray\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Nico\\dsa\\DynamicArray\\consoleapp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "D:\\Nico\\dsa\\DynamicArray\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "D:\\Nico\\dsa\\DynamicArray\\consoleapp1\\ConsoleApp1.csproj",
+        "projectPath": "D:\\Nico\\dsa\\DynamicArray\\ConsoleApp1\\ConsoleApp1.csproj",
         "packagesPath": "C:\\Users\\nspire 06112024\\.nuget\\packages\\",
-        "outputPath": "D:\\Nico\\dsa\\DynamicArray\\consoleapp1\\obj\\",
+        "outputPath": "D:\\Nico\\dsa\\DynamicArray\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
