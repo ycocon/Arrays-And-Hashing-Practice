@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="DynamicArrays/DynamicArrays.csproj" />
+  <Project Path="HashUsage/HashUsage.csproj" />
+</Solution>
