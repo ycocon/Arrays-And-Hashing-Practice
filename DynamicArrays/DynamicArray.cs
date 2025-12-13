@@ -38,18 +38,108 @@ public class DynamicArray<T>
     }
 
     // level 2
+    bool AreEqual(T a, T b)
+    {
+        return EqualityComparer<T>.Default.Equals(a, b);
+    }
+
+    public void Insert(int index, T item)
+    {
+        throw new NotImplementedException();
+
+        if (index + 1 > Count)
+        {
+            throw new ArgumentOutOfRangeException(nameof(index));
+        }
+
+        // Add capacity when needed
+        if (_items.Length == _size)
+        {
+            if (_items.Length == 0)
+            {
+                Array.Resize(ref _items, 4);
+            }
+            else
+            {
+                Array.Resize(ref _items, _items.Length * 2);
+            }
+        }
+
+        _size += 1;
+
+        for (int i = _size - 1; i >= index; i--)
+        {
+            if (i == index)
+            {
+                _items[index] = item;
+            }
+
+            // _items[_size + 1]
+        }
+    }
+
+    public bool Remove(T item)
+    {
+        bool isFound = false;
+
+        for (int i = 0; i < _size; i++)
+        {
+            if (AreEqual(_items[i], item))
+            {
+                isFound = true;
+            }
+
+            if (isFound)
+            {
+                if (i + 1 < _size)
+                {
+                    _items[i] = _items[i + 1];
+                }
+                else
+                {
+                    _items[i] = default!;
+                }
+
+                _size -= 1;
+            }
+        }
+
+        return isFound;
+    }
+
     public bool Contains(T item)
     {
-        return _items.Contains(item);
+        for (int i = 0; i < _size; i++)
+        {
+            if (AreEqual(_items[i], item))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public int IndexOf(T item)
     {
-        return _items.IndexOf(item);
+        for (int i = 0; i < _size; i++)
+        {
+            if (AreEqual(_items[i], item))
+            {
+                return i;
+            }
+        }
+
+        return -1;
     }
 
     public void Clear()
     {
-        Array.Clear(_items);
+        for (int i = 0; i < _size; i++)
+        {
+            _items[i] = default!;
+        }
+
+        _size = 0;
     }
 }
