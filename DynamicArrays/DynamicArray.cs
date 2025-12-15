@@ -45,8 +45,6 @@ public class DynamicArray<T>
 
     public void Insert(int index, T item)
     {
-        throw new NotImplementedException();
-
         if (index + 1 > Count)
         {
             throw new ArgumentOutOfRangeException(nameof(index));
@@ -65,17 +63,17 @@ public class DynamicArray<T>
             }
         }
 
-        _size += 1;
-
         for (int i = _size - 1; i >= index; i--)
         {
+            _items[i + 1] = _items[i];
+
             if (i == index)
             {
-                _items[index] = item;
+                _items[i] = item;
             }
-
-            // _items[_size + 1]
         }
+
+        _size += 1;
     }
 
     public bool Remove(T item)
