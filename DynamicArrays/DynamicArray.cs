@@ -1,4 +1,6 @@
-public class DynamicArray<T>
+using System.Collections;
+
+public class DynamicArray<T> : IEnumerable<T>
 {
     private T[] _items;
     private int _size;
@@ -15,7 +17,13 @@ public class DynamicArray<T>
 
     public T this[int index]
     {
-        get => _items[index];
+        get
+        {
+            if (index < 0 || index >= _size)
+                throw new ArgumentOutOfRangeException();
+
+            return _items[index];
+        }
         set => _items[index] = value;
     }
 
@@ -162,4 +170,14 @@ public class DynamicArray<T>
 
         _size = 0;
     }
+
+    // apply IEnumerable<T>
+    public IEnumerator<T> GetEnumerator()
+    {
+        for (int i = 0; i < _size; i++)
+            yield return _items[i];
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+        => GetEnumerator();
 }
